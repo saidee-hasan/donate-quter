@@ -20,12 +20,18 @@
         <ul class="justify-between flex ">
           <li><button class="btn btn-active btn-ghost">Blog</button></li>
           <li class="flex gap-1">
-            <img class="w-10" src="./assets/logo.png" alt="" />
-            <h1 id="donation-btn" class="mt-3">Donate-Bangladesh</h1>
+            <img class="md:w-12 w-8" src="./assets/logo.png" alt="" />
+            <h1 id="donation-btn" class="mt-3">Donate-Iran</h1>
           </li>
-          <li class="flex">
-            <img src="./assets/coin.png" alt="" />
-            <h1 class="mt-3 flex mr-3 gap-1"><p id="myBalance">5500</p> <span>BDT</span></h1>
+          <li class="">
+            <div class="flex">
+              <img class="mt-2" src="./assets/coin.png" alt="" />
+              <h1 class="mt-3 flex mr-3 gap-1"><p id="myBalance">5500</p> <span>BDT</span></h1>
+            
+            </div>
+     
+            
+            
           </li>
         </ul>
       </nav>
@@ -45,8 +51,8 @@
       <div class="md:flex gap-4 p-4  bg-white shadow-xl rounded-md ">
         <img class=" md:w-96 mx-auto" src="./assets/noakhali.png" alt="">
         <div class="space-y-12 p-10 md:p-0">
-          <button class="btn btn-active btn-ghost"><img src="./assets/coin.png" alt=""> <p id="total-amount">1000</p><span> BDT</span></button>
-          <h2 class="font-bold text-2xl">Donate for Flood at Noakhali, Bangladesh</h2>
+          <button class="btn btn-active btn-ghost"><img  src="./assets/coin.png" alt=""> <p id="total-amount">1000</p><span> BDT</span></button>
+          <h2 id="donate-title" class="font-bold text-2xl">Donate for Flood at Noakhali, Bangladesh</h2>
           <p> The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
            <input id="donate-amount" class="w-full h-12 border p-2 rounded-md " type="text" placeholder="Write Donation Amount">
            <button id="donate" c class="btn btn-active btn-ghost w-full"  onclick="my_modal_2.showModal()">Donate Now</button>
@@ -55,7 +61,7 @@
 
 <dialog id="my_modal_2" class="modal">
   <div class="modal-box">
-    <h3 class="text-lg font-bold text-3xl text-center" id="input-text"></h3>
+    <h3 class="text-lg font-bold text-3xl text-center" id="modal-text"></h3>
     <img class="mx-auto" src="./assets/coin.png" alt="">
     <p class="py-4 text-center">Press ESC key or click the button below to close</p>
     <form method="dialog" >
@@ -80,8 +86,11 @@
      
     </section>
       <!-- Donation History -->
-   <div id="history" class="hidden mt-44">
+   <div id="history" class="hidden mt-44 container mx-auto ">
     <p id="demo"></p>
+    <div id="ty" ></div>
+
+    
 
    </div>
    <script src="./main.js"></script>

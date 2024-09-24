@@ -4,18 +4,41 @@ document.getElementById("donate").addEventListener('click',function(e){
     const addAmount = document.getElementById('donate-amount').value;
     const totalAmount = document.getElementById("total-amount").innerText;
     const myBalance = document.getElementById("myBalance").innerText;
-    const time = new Date();
-document.getElementById("demo").innerHTML = time;
 
-    if(addAmount > 0 && myBalance >=  addAmount ){
+
+
+    if(addAmount > 0 && parseFloat(myBalance )>=  addAmount ){
         const amountAdd = parseFloat(addAmount) + parseFloat(totalAmount)
         document.getElementById('total-amount').innerText = amountAdd;
+
         const balance = parseFloat(myBalance) - addAmount;
         document.getElementById('myBalance').innerText = balance;
-         document.getElementById("input-text").innerText ="Congrats !"
+        
+         // Modal Interface
+        document.getElementById("modal-text").innerText ="Congrats !";
+        const donate_title = document.getElementById('donate-title').innerText;
+        console.log(donate_title)
+         const time = new Date();
+         const dateTime =   document.innerText = time;
+         const div = document.createElement('div');
+         div.innerHTML =`
+         <div class="border border-black p-3 rounded-md mt-5">
+          <h3> ${parseFloat(addAmount)} Taka is   ${donate_title}</h3>
+      
+         <p>${dateTime}</p>
+         </div>
+        
+         
+         `
+
+         document.getElementById('ty').appendChild(div);
+
+        
+       
+      console.log(lll)
 
     }else{
-       document.getElementById("input-text").innerText ="Inalid!"
+       document.getElementById("modal-text").innerText ="Inalid!"
     }
 
 })
