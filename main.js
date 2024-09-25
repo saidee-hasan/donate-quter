@@ -1,70 +1,85 @@
-document.getElementById("donate").addEventListener("click", function (e) {
-  e.preventDefault;
+// toggle active status
+const donationBtn = document.querySelector(".donation-btn");
+const historyBtn = document.querySelector(".history-btn");
 
-  const donateAmount = document.querySelector(".donate-amount").value;
-  const totalAmount = document.querySelector(".total-amount").innerText;
-  const myBalance = document.querySelector(".myBalance").innerText;
+donationBtn.addEventListener("click", activeState);
+historyBtn.addEventListener("click", activeState);
 
-  if (donateAmount > 0 && parseFloat(myBalance) >= donateAmount) {
-    const amountAdd = parseFloat(donateAmount) + parseFloat(totalAmount);
-    document.querySelector(".total-amount").innerText = amountAdd;
+function activeState(event) {
 
-    const balance = parseFloat(myBalance) - donateAmount;
-    document.querySelector(".myBalance").innerText = balance;
+    let active = event.target;
 
-    // Modal Interface
-    document.querySelector(".modal-text").innerText = "Congrates !";
-    document.querySelector(".modal-p-text").innerText = "you have donated Humankind ";
-    document.querySelector(".success-text").innerText = "successfully";
+    active.classList.remove("bg-transparent");
+    active.classList.remove("border-gray-400");
+    active.classList.add("border-lime-400");
+    active.classList.add("bg-lime-400");
+    active.classList.add("font-bold");
 
-    const donate_title = document.querySelector(".donate-title").innerText;
-    console.log(donate_title);
-    const time = new Date();
-    const dateTime = (document.innerText = time);
-    const div = document.createElement("div");
-    div.innerHTML = `
-         <div class="border border-black p-3 rounded-md mt-5">
-          <h3 class='font-bold'> ${parseFloat(
-            donateAmount
-          )} Taka is   ${donate_title}</h3>
-      
-         <p class="text-gray-400">${dateTime}</p>
-         </div>
-         `;
 
-    document.querySelector(".total-history-text").appendChild(div);
+    let deactive = active === donationBtn ? historyBtn : donationBtn;
 
-    console.log(lll);
-  } else {
-    document.querySelector(".modal-text").innerText = "Inalid!";
-  }
-});
-
-// Active Color
-
-function showSectionBtn(id) {
-  document.getElementById("card-section").classList.add("hidden");
-  document.getElementById("history").classList.add("hidden");
-  document.getElementById(id).classList.remove("hidden");
-}
-document.getElementById("btn").addEventListener("click", function () {
-  showSectionBtn("card-section");
-});
-document.getElementById("btn-2").addEventListener("click", function () {
-  showSectionBtn("history");
-});
-
-// Btn Active Color
-function showBtnColor(id) {
-  document.getElementById(id).classList.add("bg-green-400");
-  document.getElementById(id).classList.add("bg-green-400");
+    deactive.classList.remove("border-lime-400");
+    deactive.classList.remove("bg-lime-400");
+    deactive.classList.remove("font-bold");
+    deactive.classList.add("bg-transparent");
+    deactive.classList.add("border-gray-400");
 }
 
-document.getElementById("btn").addEventListener("click", function () {
-  document.getElementById("btn-2").classList.remove("bg-green-400");
-  showBtnColor("btn")
-});
-document.getElementById("btn-2").addEventListener("click", function () {
-  document.getElementById("btn").classList.remove("bg-green-400");
-  showBtnColor("btn-2")
-});
+// nested navigation event
+const donateSec = document.querySelector(".donate-section");
+const historySec = document.querySelector(".history-section");
+const footer = document.body.querySelector("footer");
+
+donationBtn.addEventListener("click", showDonate);
+historyBtn.addEventListener("click", showHistory);
+
+function showDonate() {
+
+    donateSec.classList.remove('hidden');
+    historySec.classList.add('hidden');
+    footer.classList.remove('hidden');
+}
+
+function showHistory() {
+    
+    historySec.classList.remove('hidden');
+    donateSec.classList.add('hidden');
+    footer.classList.add('hidden');
+}
+
+// modal function
+const dialog = document.querySelector("dialog");
+
+function closeDialog() {
+
+    dialog.style.display = "none";
+}
+
+// donate function
+const balance = document.querySelector(".balance span");
+
+function donate(el) {
+
+
+    let inpValue = el.parentNode.querySelector("input[type='text']");
+    let donateAmount = el.parentNode.querySelector(".donation span");
+    let heading = el.parentNode.querySelector("h2");
+
+    if (isNaN(Number(inpValue.value)) || Number(inpValue.value) <= 0) return alert("invalid input");
+    if (Number(inpValue.value) > Number(balance.textContent)) return alert("insufficient balance");
+
+    balance.innerText = Number(balance.textContent) - Number(inpValue.value);
+    donateAmount.textContent = Number(donateAmount.textContent) + Number(inpValue.value);
+
+    historySec.innerHTML +=
+        `<div class="w-11/12 md:w-9/12 mx-auto p-6 border-2 border-gray-100 rounded-2xl space-y-4">
+
+            <p class="text-lg font-bold">${Number(inpValue.value)} Taka is Donated for ${heading.innerText.slice(heading.innerText.indexOf("for") + 3)}</p>
+            <p>Date : ${new Date()}</p>
+
+        </div>`;
+
+    inpValue.value = "";
+    dialog.style.display = "flex";
+
+}
