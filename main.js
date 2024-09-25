@@ -1,20 +1,21 @@
 document.getElementById("donate").addEventListener("click", function (e) {
   e.preventDefault;
 
-  const donateAmount = document.getElementById("donate-amount").value;
-  const totalAmount = document.getElementById("total-amount").innerText;
-  const myBalance = document.getElementById("myBalance").innerText;
+  const donateAmount = document.querySelector(".donate-amount").value;
+  const totalAmount = document.querySelector(".total-amount").innerText;
+  const myBalance = document.querySelector(".myBalance").innerText;
 
   if (donateAmount > 0 && parseFloat(myBalance) >= donateAmount) {
     const amountAdd = parseFloat(donateAmount) + parseFloat(totalAmount);
-    document.getElementById("total-amount").innerText = amountAdd;
+    document.getElementsByClassName("total-amount").innerText = amountAdd;
 
     const balance = parseFloat(myBalance) - donateAmount;
-    document.getElementById("myBalance").innerText = balance;
+    document.querySelector(".myBalance").innerText = balance;
 
     // Modal Interface
     document.getElementById("modal-text").innerText = "Congrates !";
-    document.getElementById("modal-p-text").innerText = "you have donate ";
+    document.getElementById("modal-p-text").innerText = "you have donated Humankind ";
+    document.getElementById("success-text").innerText = "successfully";
 
     const donate_title = document.getElementById("donate-title").innerText;
     console.log(donate_title);
