@@ -53,18 +53,18 @@
         <img class=" md:w-96 mx-auto" src="./assets/noakhali.png" alt="">
         <div class="space-y-12 p-10 md:p-0">
           <button class="btn btn-active btn-ghost"><img  src="./assets/coin.png" alt=""> <p class="total-amount">1000</p><span> BDT</span></button>
-          <h2 id="donate-title" class="font-bold text-2xl">Donate for Flood at Noakhali, Bangladesh</h2>
+          <h2 class="font-bold text-2xl donate-title">Donate for Flood at Noakhali, Bangladesh</h2>
           <p> The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
            <input  class="w-full h-12 border p-2 rounded-md donate-amount " type="text" placeholder="Write Donation Amount">
            <button id="donate" c class="btn btn-active btn-ghost w-full"  onclick="my_modal_2.showModal()">Donate Now</button>
           <!-- Show modal -->
            <dialog id="my_modal_2" class="modal">
            <div class="modal-box">
-           <h3 class="text-lg font-bold text-3xl text-center" id="modal-text"></h3>
-           <p id="modal-p-text" class="text-center"></p>
+           <h3 class="text-lg font-bold text-3xl text-center modal-text"></h3>
+           <p  class="text-center modal-p-text"></p>
           
           <img class="mx-auto" src="./assets/coin.png" alt="">
-          <h1 id="success-text" class="text-center font-bold "></h1>
+          <h1  class="text-center font-bold success-text "></h1>
            <form method="dialog" >
       <!-- if there is a button in form, it will close the modal -->
          <button class="btn w-full">Close</button>
@@ -84,7 +84,7 @@
       <!-- Donation History -->
    <div id="history" class="hidden mt-44 container mx-auto ">
     <p id="demo"></p>
-    <div id="ty" ></div>
+    <div class="total-history-text" ></div>
 
     
 

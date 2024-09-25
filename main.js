@@ -7,17 +7,17 @@ document.getElementById("donate").addEventListener("click", function (e) {
 
   if (donateAmount > 0 && parseFloat(myBalance) >= donateAmount) {
     const amountAdd = parseFloat(donateAmount) + parseFloat(totalAmount);
-    document.getElementsByClassName("total-amount").innerText = amountAdd;
+    document.querySelector(".total-amount").innerText = amountAdd;
 
     const balance = parseFloat(myBalance) - donateAmount;
     document.querySelector(".myBalance").innerText = balance;
 
     // Modal Interface
-    document.getElementById("modal-text").innerText = "Congrates !";
-    document.getElementById("modal-p-text").innerText = "you have donated Humankind ";
-    document.getElementById("success-text").innerText = "successfully";
+    document.querySelector(".modal-text").innerText = "Congrates !";
+    document.querySelector(".modal-p-text").innerText = "you have donated Humankind ";
+    document.querySelector(".success-text").innerText = "successfully";
 
-    const donate_title = document.getElementById("donate-title").innerText;
+    const donate_title = document.querySelector(".donate-title").innerText;
     console.log(donate_title);
     const time = new Date();
     const dateTime = (document.innerText = time);
@@ -32,11 +32,11 @@ document.getElementById("donate").addEventListener("click", function (e) {
          </div>
          `;
 
-    document.getElementById("ty").appendChild(div);
+    document.querySelector(".total-history-text").appendChild(div);
 
     console.log(lll);
   } else {
-    document.getElementById("modal-text").innerText = "Inalid!";
+    document.querySelector(".modal-text").innerText = "Inalid!";
   }
 });
 
