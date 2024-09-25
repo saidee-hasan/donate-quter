@@ -1,4 +1,4 @@
-// donate function
+// donate function 
 const balance = document.querySelector(".balance span");
 
 function donate(el) {
@@ -32,7 +32,7 @@ function donate(el) {
 
 // toggle active status
 const donationBtn = document.querySelector(".donation-btn");
-const historyBtn = document.querySelector(".history-btn");
+const historyBtn = document.querySelector(".history");
 
 donationBtn.addEventListener("click", activeState);
 historyBtn.addEventListener("click", activeState);
