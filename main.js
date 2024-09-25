@@ -1,24 +1,24 @@
 // donate function 
 const balance = document.querySelector(".balance span");
 
-function donate(el) {
-  let inpValue = el.parentNode.querySelector("input[type='text']");
-  let donateAmount = el.parentNode.querySelector(".donation span");
-  let heading = el.parentNode.querySelector("h2");
+function donate(e) {
+  let inputValue = e.parentNode.querySelector("input[type='text']");
+  let donateAmount = e.parentNode.querySelector(".donation span");
+  let heading = e.parentNode.querySelector("h2");
 
-  if (isNaN(Number(inpValue.value)) || Number(inpValue.value) <= 0)
+  if (isNaN(Number(inputValue.value)) || Number(inputValue.value) <= 0)
     return alert("invalid input");
-  if (Number(inpValue.value) > Number(balance.textContent))
+  if (Number(inputValue.value) > Number(balance.textContent))
     return alert("insufficient balance");
 
-  balance.innerText = Number(balance.textContent) - Number(inpValue.value);
+  balance.innerText = Number(balance.textContent) - Number(inputValue.value);
   donateAmount.textContent =
-    Number(donateAmount.textContent) + Number(inpValue.value);
+    Number(donateAmount.textContent) + Number(inputValue.value);
 
-  historySec.innerHTML += `<div class="w-11/12 md:w-9/12 mx-auto p-6 border-2 border-gray-100 rounded-2xl space-y-4">
+  historySection.innerHTML += `<div class="w-11/12 md:w-9/12 mx-auto p-6 border-2 border-gray-100 rounded-2xl space-y-4">
 
             <p class="text-lg font-bold">${Number(
-              inpValue.value
+              inputValue.value
             )} Taka is Donated for ${heading.innerText.slice(
     heading.innerText.indexOf("for") + 3
   )}</p>
@@ -26,7 +26,7 @@ function donate(el) {
 
         </div>`;
 
-  inpValue.value = "";
+  inputValue.value = "";
   dialog.style.display = "flex";
 }
 
@@ -46,32 +46,32 @@ function activeState(event) {
   active.classList.add("bg-green-400");
   active.classList.add("font-bold");
 
-  let deactive = active === donationBtn ? historyBtn : donationBtn;
+  let dactive = active === donationBtn ? historyBtn : donationBtn;
 
-  deactive.classList.remove("border-green-400");
-  deactive.classList.remove("bg-green-400");
-  deactive.classList.remove("font-bold");
-  deactive.classList.add("bg-transparent");
-  deactive.classList.add("border-gray-400");
+  dactive.classList.remove("border-green-400");
+  dactive.classList.remove("bg-green-400");
+  dactive.classList.remove("font-bold");
+  dactive.classList.add("bg-transparent");
+  dactive.classList.add("border-gray-400");
 }
 
 // nested navigation event
-const donateSec = document.querySelector(".donate-section");
-const historySec = document.querySelector(".history-section");
+const donateSection = document.querySelector(".donate-section");
+const historySection = document.querySelector(".history-section");
 const footer = document.body.querySelector("footer");
 
 donationBtn.addEventListener("click", showDonate);
-historyBtn.addEventListener("click", showHistory);
+historyBtn.addEventListener("click", showDonationHistory);
 
 function showDonate() {
-  donateSec.classList.remove("hidden");
-  historySec.classList.add("hidden");
+  donateSection.classList.remove("hidden");
+  historySection.classList.add("hidden");
   footer.classList.remove("hidden");
 }
 
-function showHistory() {
-  historySec.classList.remove("hidden");
-  donateSec.classList.add("hidden");
+function showDonationHistory() {
+  historySection.classList.remove("hidden");
+  donateSection.classList.add("hidden");
   footer.classList.add("hidden");
 }
 
