@@ -11,15 +11,15 @@ function activeState(event) {
 
     active.classList.remove("bg-transparent");
     active.classList.remove("border-gray-400");
-    active.classList.add("border-lime-400");
-    active.classList.add("bg-lime-400");
+    active.classList.add("border-green-400");
+    active.classList.add("bg-green-400");
     active.classList.add("font-bold");
 
 
     let deactive = active === donationBtn ? historyBtn : donationBtn;
 
-    deactive.classList.remove("border-lime-400");
-    deactive.classList.remove("bg-lime-400");
+    deactive.classList.remove("border-green-400");
+    deactive.classList.remove("bg-green-400");
     deactive.classList.remove("font-bold");
     deactive.classList.add("bg-transparent");
     deactive.classList.add("border-gray-400");
