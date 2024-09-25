@@ -18,10 +18,11 @@
     <div class="bg-gray-200 mx-auto fixed w-full top-0 ">
       <nav class="container mx-auto p-1 ">
         <ul class="justify-between flex ">
-          <li><button class="btn btn-active btn-ghost">Blog</button></li>
+          <li><button class="btn btn-active btn-ghost"><a href="./blog.html">Blog</a></button></li>
           <li class="flex gap-1">
             <img class="md:w-12 w-8" src="./assets/logo.png" alt="" />
             <h1 id="donation-btn" class="mt-3">Donate-Iran</h1>
+
           </li>
           <li class="">
             <div class="flex">
@@ -39,8 +40,8 @@
       <div class="bg-slate-50">
         <div class="container mx-auto flex justify-center mt-2 gap-10 p-2">
       
-          <button id="btn" class="btn btn-active btn-ghost">Donation</button>
-          <button id="btn-2" class="btn btn-active btn-ghost">History</button>
+          <button id="btn" class=" p-2 rounded-md border  bg-green-400  ">Donation</button>
+          <button id="btn-2" class="p-2 rounded-md border ">History</button>
         </div>
       </div>
     </div>
@@ -56,28 +57,21 @@
           <p> The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
            <input id="donate-amount" class="w-full h-12 border p-2 rounded-md " type="text" placeholder="Write Donation Amount">
            <button id="donate" c class="btn btn-active btn-ghost w-full"  onclick="my_modal_2.showModal()">Donate Now</button>
-<!-- Open the modal using ID.showModal() method -->
-<!-- Open the modal using ID.showModal() method -->
-
-<dialog id="my_modal_2" class="modal">
-  <div class="modal-box">
-    <h3 class="text-lg font-bold text-3xl text-center" id="modal-text"></h3>
-    <img class="mx-auto" src="./assets/coin.png" alt="">
-    <p class="py-4 text-center">Press ESC key or click the button below to close</p>
-    <form method="dialog" >
+          <!-- Show modal -->
+           <dialog id="my_modal_2" class="modal">
+           <div class="modal-box">
+           <h3 class="text-lg font-bold text-3xl text-center" id="modal-text"></h3>
+           <p id="modal-p-text"></p>
+          <img class="mx-auto" src="./assets/coin.png" alt="">
+           <form method="dialog" >
       <!-- if there is a button in form, it will close the modal -->
-      <button class="btn w-full">Close</button>
-    </form>
-  </div>
- 
-</dialog>
-
-   
-        
-    </div>
-  </div>
-</dialog>
-           
+         <button class="btn w-full">Close</button>
+        </form>
+       </div>
+        </dialog>
+         </div>
+       </div>
+       </dialog>
         </div>
        </div>
 
