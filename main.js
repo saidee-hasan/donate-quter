@@ -1,4 +1,4 @@
-// donate function 
+// donate function
 const balance = document.querySelector(".balance span");
 
 function donate(e) {
