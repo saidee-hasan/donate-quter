@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # donate-bangladesh
 
 
@@ -12,3 +13,7 @@
 
 
 ![donate-bangladesh](./assets/fullpagesnap-screenshot-tool__quter-donation%20(2).png)
+=======
+# donate-Quter
+
+>>>>>>> 966320df064c6901eb270fed18805bd7c021e478
